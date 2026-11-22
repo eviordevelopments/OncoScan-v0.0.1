@@ -1,0 +1,35 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Next.js build output
+/.next/
+/out/
+/build
+
+# Sensitive raw clinical spreadsheets (contains PII / patient names & phone numbers)
+/IMPACT/
+*.xlsx
+
+# Misc & OS files
+.DS_Store
+.bevel/
+.vscode/
+/partners/
+*.pem
+.vercel
+.netlify
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+.env
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
