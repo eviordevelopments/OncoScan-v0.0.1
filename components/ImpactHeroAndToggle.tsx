@@ -12,7 +12,7 @@ import {
   Activity,
   AlertCircle,
   Calendar,
-  CheckCircle2,
+  Camera,
   FileCheck2,
   Filter,
   Globe2,
@@ -41,6 +41,49 @@ interface ImpactHeroAndToggleProps {
   filteredPatients: CohortPatient[];
   allPatients: CohortPatient[];
 }
+
+const COHORT_PHOTOS = [
+  {
+    src: "/COHORTE_1-PHOTO5.jpg",
+    tag: "Brigada Multidisciplinaria SSG",
+    title: "Equipo médico y de enfermería en campo",
+    caption:
+      "Personal de salud de la Secretaría de Salud de Guanajuato (SSG) y equipo de tamizaje preventivo durante el despliegue comunitario.",
+    aspect: "lg:col-span-7 h-[340px] sm:h-[420px]",
+  },
+  {
+    src: "/COHORTE_1-PHOTO2.jpg",
+    tag: "Tamizaje Clínico Integral",
+    title: "Toma de presión arterial y glucosa capilar",
+    caption:
+      "Medición simultánea de signos vitales, punción capilar y llenado de expediente preventivo con cada habitante.",
+    aspect: "lg:col-span-5 h-[340px] sm:h-[420px]",
+  },
+  {
+    src: "/COHORTE_1-PHOTO3.jpg",
+    tag: "Módulo de Primer Contacto",
+    title: "Circuito de atención comunitaria instalada",
+    caption:
+      "Estaciones de triaje, somatometría, insumos diagnósticos y orientación médica operando directamente en la comunidad.",
+    aspect: "lg:col-span-5 h-[320px] sm:h-[380px]",
+  },
+  {
+    src: "/COHORTE_1-PHOTO4.jpg",
+    tag: "Cédula Oficial CENAPRECE",
+    title: "Registro estandarizado bajo normativa federal",
+    caption:
+      "Captura física de la Cédula de Detección Integrada (Cuestionario de Factores de Riesgo CENAPRECE) y manejo seguro de RPBI.",
+    aspect: "lg:col-span-3 h-[320px] sm:h-[380px]",
+  },
+  {
+    src: "/COHORTE_1-PHOTO1.jpg",
+    tag: "Participación Ciudadana",
+    title: "Recepción y flujo continuo de habitantes",
+    caption:
+      "Asistencia voluntaria de trabajadores y familias de la comunidad bajo protocolo de consentimiento informado.",
+    aspect: "lg:col-span-4 h-[320px] sm:h-[380px]",
+  },
+];
 
 export function ImpactHeroAndToggle({
   sexFilter,
@@ -205,12 +248,12 @@ export function ImpactHeroAndToggle({
   return (
     <div className="relative w-full">
       {/* ==================================================================== */}
-      {/* 1. FULL-BLEED PHOTOGRAPHIC HERO SECTION (ONLY TITLE & SUBTITLE)      */}
+      {/* 1. FULL-BLEED PHOTOGRAPHIC HERO SECTION (REAL BRIGADE PHOTO)         */}
       {/* ==================================================================== */}
       <section className="relative w-full h-[94vh] min-h-[680px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/profile-caregivers-patients.jpg"
-          alt="Prevención y detección temprana en la comunidad"
+          src="/COHORTE_1-PHOTO3.jpg"
+          alt="Jornada de prevención y detección temprana en la comunidad"
           fill
           priority
           unoptimized
@@ -221,14 +264,14 @@ export function ImpactHeroAndToggle({
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(6,9,17,0.58) 0%, rgba(6,9,17,0.48) 45%, rgba(6,9,17,0.78) 100%)",
+              "linear-gradient(180deg, rgba(6,9,17,0.62) 0%, rgba(6,9,17,0.52) 45%, rgba(6,9,17,0.82) 100%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(circle at 50% 50%, rgba(24,50,199,0.22) 0%, rgba(0,0,0,0) 70%)",
+              "radial-gradient(circle at 50% 50%, rgba(24,50,199,0.25) 0%, rgba(0,0,0,0) 70%)",
           }}
         />
 
@@ -268,7 +311,7 @@ export function ImpactHeroAndToggle({
           <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* LEFT 5 COLUMNS: STRATEGIC SSG LOGO + FIXED CONTEXT & STEP INDICATORS */}
             <div className="lg:col-span-5 space-y-6">
-              {/* Strategic Official SSG Logo Block replacing the text pill */}
+              {/* Strategic Official SSG Logo Block */}
               <div className="inline-flex items-center gap-5 px-5 py-3.5 rounded-3xl bg-white border border-slate-200/90 shadow-[0_10px_30px_rgba(6,9,17,0.05)]">
                 <Image
                   src="/logo_SSG.png"
@@ -286,7 +329,7 @@ export function ImpactHeroAndToggle({
                     UMAPS Loza de los Padres
                   </span>
                   <span className="block text-[11px] text-slate-500">
-                    Jurisdicción Sanitaria VII · León, GTO
+                    Jurisdicción Sanitaria VII · Guanajuato
                   </span>
                 </div>
               </div>
@@ -306,7 +349,7 @@ export function ImpactHeroAndToggle({
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200/70 text-[#DC2626] text-xs font-semibold">
                   <MapPin className="w-3.5 h-3.5 text-[#EF4444]" />
-                  León de los Aldama, Guanajuato, México
+                  Loza de los Padres, Guanajuato, México
                 </span>
               </div>
 
@@ -315,8 +358,7 @@ export function ImpactHeroAndToggle({
               </h2>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                El pasado <strong className="text-[#060911]">20 de noviembre</strong> en{" "}
-                <strong className="text-[#060911]">León de los Aldama, Guanajuato</strong>,
+                El pasado <strong className="text-[#060911]">20 de noviembre</strong>,
                 en coordinación con la{" "}
                 <strong className="text-[#1832C7]">
                   Secretaría de Salud de Guanajuato
@@ -377,7 +419,7 @@ export function ImpactHeroAndToggle({
                     01 · Cobertura de la jornada
                   </span>
                   <span className="text-xs font-mono text-slate-400">
-                    Cédula Oficial CENAPRECE · León, GTO
+                    Cédula Oficial CENAPRECE · Guanajuato
                   </span>
                 </div>
 
@@ -590,6 +632,79 @@ export function ImpactHeroAndToggle({
       </section>
 
       {/* ==================================================================== */}
+      {/* 2.5 MEMORIA FOTOGRÁFICA DE LA JORNADA EN CAMPO (5 REAL PHOTOS)       */}
+      {/* ==================================================================== */}
+      <section
+        id="galeria-jornada"
+        className="relative pt-16 pb-6 px-6 sm:px-10 lg:px-16 max-w-[1440px] mx-auto"
+      >
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-[0.16em] text-[#1832C7] font-semibold mb-2">
+              <Camera className="w-4 h-4 text-[#0052FF]" />
+              <span>EVIDENCIA DOCUMENTAL EN CAMPO · UMAPS LOZA DE LOS PADRES</span>
+            </div>
+            <h3 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#060911]">
+              Nuestra brigada preventiva en acción
+            </h3>
+          </div>
+          <p className="text-sm sm:text-base text-slate-600 max-w-xl">
+            Registro fotográfico del despliegue comunitario realizado junto al
+            personal de la <strong className="text-[#1832C7]">Secretaría de Salud de Guanajuato</strong>{" "}
+            aplicando el cuestionario oficial del <strong className="text-[#060911]">CENAPRECE</strong>.
+          </p>
+        </div>
+
+        {/* 5-Photo Bento Gallery Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {COHORT_PHOTOS.map((photo, idx) => (
+            <motion.div
+              key={photo.src}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: idx * 0.08 }}
+              whileHover={{ y: -4 }}
+              className={`group relative rounded-[32px] overflow-hidden bg-slate-900 border border-slate-200/90 shadow-[0_16px_48px_rgba(6,9,17,0.08)] ${photo.aspect}`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.title}
+                fill
+                unoptimized
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Bottom Editorial Gradient Overlay */}
+              <div
+                className="absolute inset-0 transition-opacity duration-300"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(6,9,17,0.08) 0%, rgba(6,9,17,0.22) 45%, rgba(6,9,17,0.88) 100%)",
+                }}
+              />
+
+              {/* Top Tag Pill */}
+              <div className="absolute top-5 left-5 z-10">
+                <span className="px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[#060911] text-xs font-bold shadow-sm">
+                  {photo.tag}
+                </span>
+              </div>
+
+              {/* Bottom Caption */}
+              <div className="absolute bottom-0 inset-x-0 p-6 sm:p-7 z-10 text-white">
+                <h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+                  {photo.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                  {photo.caption}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* ==================================================================== */}
       {/* 3. EXPANDED DEMOGRAPHICS & INTERACTIVE FILTER BAR                    */}
       {/* ==================================================================== */}
       <section className="relative py-20 px-6 sm:px-10 lg:px-16 max-w-[1440px] mx-auto">
@@ -664,7 +779,7 @@ export function ImpactHeroAndToggle({
               01 · PERFIL DE LA COMUNIDAD EVALUADA
             </p>
             <h3 className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#060911]">
-              ¿A quiénes atendimos en León de los Aldama?
+              ¿A quiénes atendimos en la jornada comunitaria?
             </h3>
           </div>
           <p className="text-sm sm:text-base text-slate-500">

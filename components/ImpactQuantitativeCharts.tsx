@@ -732,7 +732,7 @@ export function ImpactQuantitativeCharts({
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 mb-5 leading-relaxed">
               Permite ubicar rápidamente cualquier medición individual frente al resto
-              de los habitantes evaluados en León de los Aldama.
+              de los habitantes evaluados en la jornada comunitaria.
             </p>
 
             <div className="overflow-x-auto">

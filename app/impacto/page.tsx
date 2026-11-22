@@ -5,9 +5,9 @@ import { ImpactPageClient } from "@/components/ImpactPageClient";
 
 export const metadata: Metadata = {
   title:
-    "Impacto · Prevención y Detección Temprana (León de los Aldama, GTO) | OncoScan",
+    "Impacto · Prevención y Detección Temprana (UMAPS Loza de los Padres, GTO) | OncoScan",
   description:
-    "Resultados claros e interactivos de la jornada de detección temprana del 20 de noviembre en León de los Aldama, Guanajuato (UMAPS Loza de los Padres): nuevos hallazgos de salud, indicadores medidos e impacto comunitario.",
+    "Resultados claros e interactivos de la jornada de detección temprana del 20 de noviembre en Guanajuato (UMAPS Loza de los Padres): nuevos hallazgos de salud, indicadores medidos e impacto comunitario.",
 };
 
 export default function ImpactoPage() {

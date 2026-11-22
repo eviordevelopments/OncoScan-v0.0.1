@@ -45,10 +45,10 @@ export interface CohortPatient {
 
 export const UMAPS_COHORT_METADATA = {
   id: "cohorte-umaps-loza-2025-11-20",
-  title: "Cohorte UMAPS Loza de los Padres — León de los Aldama, GTO.",
-  shortTitle: "León de los Aldama, GTO · 20 Nov",
+  title: "Cohorte UMAPS Loza de los Padres — Guanajuato, México",
+  shortTitle: "UMAPS Loza de los Padres, GTO · 20 Nov",
   date: "20 de Noviembre",
-  location: "UMAPS Loza de los Padres, León de los Aldama, Guanajuato, México",
+  location: "UMAPS Loza de los Padres, Guanajuato, México",
   coordinates: "21.0514° N, 101.5547° W",
   sampleSize: 26,
   status: "Completada · Datos Depurados y Normalizados (100% Integridad)",
